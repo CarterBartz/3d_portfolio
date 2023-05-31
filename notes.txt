@@ -1,0 +1,106 @@
+Color Links:
+    About:
+        green-pink-gradient
+        bg-tertiary
+        text-white
+        text-secondary
+
+
+    Contact:
+        bg-black-100
+            - Contact bg
+        text-white
+            - "Your Name" "Your Email" "Your Message"
+        text-secondary text-white
+            - "What's your name?"
+            - "What's your email?"
+            - "What do you want to say"
+        bg-tertiary text-white
+            - send button
+
+
+    Experience:
+        background: '#1d1836'
+            - card bg
+        color: '#fff'
+            - company/date
+        text-white
+            - Position
+        text-white-100
+         - Bullet points
+
+
+    Feedbacks:
+        bg-black-200
+            - card bg
+        text-white 
+            - Comma
+            - quote
+            - Name
+        blue-text-gradient
+            - @
+        text-secondary
+            - company/position
+        bg-tertiary
+            - bg behind "Testamonials"
+
+
+    Hero:
+        bg-[#915EFF]
+            - ball
+        violet-gradient
+            - line
+        text-white
+            - "Hi, I'm"
+        text-[#915EFF]
+            - "Carter"
+        text-white-100
+            - "I develop 3D visuals, user interfaces and web applications"
+        bg-secondary
+
+    Loader:
+        color: "#F1F1F1"
+
+
+    Navbar:
+        text-white 
+            logo
+        title ? "text-white" : "text-secondary" hover:text-white 
+            - about, work, contact
+        black-gradient
+
+
+    Works:
+        bg-tertiary
+            - card bg
+        black-gradient
+            - github circle bg
+        text-white
+            - project title
+        text-secondary
+            - project description
+        text-secondary
+            - Project title description
+
+    index.css:
+        .black-gradient
+        .violet-gradient
+        .green-pink-gradient
+        .orange-text-gradient
+        .green-text-gradient
+        .blue-text-gradient
+        .pink-text-gradient
+
+
+    Ball:
+        color='#fff8eb'
+            - balls
+
+
+    Computers:
+        groundColor='black'
+            - lighting?
+
+
+    Stars:
+

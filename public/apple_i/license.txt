@@ -1,0 +1,11 @@
+Model Information:
+* title:	Apple I
+* source:	https://sketchfab.com/3d-models/apple-i-6cb24f6826fa4bf7a2cebe59401f4d9a
+* author:	dnslv (https://sketchfab.com/deny.s.trevisan)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Apple I" (https://sketchfab.com/3d-models/apple-i-6cb24f6826fa4bf7a2cebe59401f4d9a) by dnslv (https://sketchfab.com/deny.s.trevisan) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
