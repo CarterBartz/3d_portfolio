@@ -8,9 +8,6 @@ const App = () => {
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
         <div className="bg-center bg-no-repeat bg-cover bg-hero-pattern">
-          <div className="image-container">
-            <div className="gradient-overlay" />
-          </div>
           <Navbar />
           <Hero />  
         </div>
