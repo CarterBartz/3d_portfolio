@@ -104,3 +104,61 @@ Color Links:
 
     Stars:
 
+
+
+
+
+
+
+{
+    name: "HTML 5",
+    icon: html,
+  },
+  {
+    name: "CSS 3",
+    icon: css,
+  },
+  {
+    name: "JavaScript",
+    icon: javascript,
+  },
+  {
+    name: "React JS",
+    icon: reactjs,
+  },
+  {
+    name: "Tailwind CSS",
+    icon: tailwind,
+  },
+  {
+    name: "Three JS",
+    icon: threejs,
+  },
+  {
+    name: "Java",
+    icon: java,
+  },
+  {
+    name: "Python3",
+    icon: python3,
+  },
+  {
+    name: "Flutter",
+    icon: flutter,
+  },
+  {
+    name: "Dart",
+    icon: dart,
+  },
+  {
+    name: "git",
+    icon: git,
+  },
+  {
+    name: "Figma",
+    icon: figma,
+  },
+  {
+    name: "Entuity",
+    icon: entuity,
+  },

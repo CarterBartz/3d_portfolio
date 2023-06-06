@@ -4,7 +4,6 @@ import {
   creator,
   web,
   javascript,
-  typescript,
   html,
   css,
   dart,
@@ -16,7 +15,6 @@ import {
   figma,
   flutter,
   entuity,
-  cpp,
   ppt,
   python3,
   menards,
@@ -84,16 +82,16 @@ const technologies = [
     icon: tailwind,
   },
   {
-    name: "Node JS",
-    icon: nodejs,
+    name: "Three JS",
+    icon: threejs,
   },
   {
     name: "Java",
     icon: java,
   },
   {
-    name: "Three JS",
-    icon: threejs,
+    name: "Python3",
+    icon: python3,
   },
   {
     name: "Flutter",
@@ -102,10 +100,6 @@ const technologies = [
   {
     name: "Dart",
     icon: dart,
-  },
-  {
-    name: "Python3",
-    icon: python3,
   },
   {
     name: "git",

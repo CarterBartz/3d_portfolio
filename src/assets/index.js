@@ -8,7 +8,6 @@ import menu from "./menu.svg";
 import close from "./close.svg";
 
 import css from "./tech/css.png";
-import cpp from "./tech/cpp.png"
 import entuity from "./tech/entuity.png";
 import figma from "./tech/figma.png";
 import flutter from "./tech/flutter.png";
@@ -20,7 +19,6 @@ import javascript from "./tech/javascript.png";
 import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
 import tailwind from "./tech/tailwind.png";
-import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 import python3 from "./tech/python3.png";
 
@@ -45,7 +43,6 @@ export {
   menu,
   close,
   css,
-  cpp,
   entuity,
   figma,
   flutter,
@@ -58,7 +55,6 @@ export {
   reactjs,
   python3,
   tailwind,
-  typescript,
   threejs,
   target,
   bbby,
