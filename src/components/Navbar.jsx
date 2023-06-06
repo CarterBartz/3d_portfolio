@@ -12,6 +12,7 @@ const Navbar = () => {
   const [reappeared, setReappeared] = useState(false);
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+  const [showVerticalNav, setShowVerticalNav] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,20 +36,43 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    const handleResize = () => {
+      setShowVerticalNav(window.innerWidth > window.innerHeight);
+    };
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
+    // Call the resize handler initially
+    handleResize();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const swingingProps = useSpring({
     transform: `translateX(${swinging ? "-100%" : "0%"})`,
-    config: { tension: 300, friction: 20 },
+    config: { tension: 300, friction: 100 },
   });
 
   const reappearedProps = useSpring({
     transform: `translateY(${reappeared ? "0%" : "-100%"})`,
-    config: { tension: 300, friction: 20 },
+    config: { tension: 300, friction: 100 },
   });
+
+  const verticalNavDisappearProps = useSpring({
+    opacity: showVerticalNav ? (window.innerWidth <= window.innerHeight * 0.75 ? 0 : 1) : 1,
+  });
+
+  const getMarginLeft = () => {
+    if (window.innerWidth < 768) {
+      return "5px";
+    } else {
+      return "10px";
+    }
+  };
 
   return (
     <nav
@@ -66,7 +90,12 @@ const Navbar = () => {
               window.scrollTo(0, 0);
             }}
           >
-            <img src={logo} alt="logo" className="object-contain mr-5 w-9 h-9" style={{ transform: 'scale(2.5)' }}/>
+            <img
+              src={logo}
+              alt="logo"
+              className="object-contain w-10 h-10 ml-5 mr-5"
+              style={{ transform: "scale(2.5)" }}
+            />
             <p className="text-white text-[24px] font-bold cursor-pointer flex ">
               Carter Bartz &nbsp;
               <span className="hidden sm:block"> | Software Developer </span>
@@ -82,10 +111,7 @@ const Navbar = () => {
                 } hover:text-white text-[18px] font-medium cursor-pointer ml-4`}
                 onClick={() => setActive(nav.title)}
               >
-                <a 
-                  href={`#${nav.id}`}
-                  className="letter-bounce"
-                >
+                <a href={`#${nav.id}`} className="letter-bounce" style={{ marginLeft: getMarginLeft() }}>
                   {nav.title}
                 </a>
               </li>
@@ -126,50 +152,53 @@ const Navbar = () => {
         </div>
       </animated.div>
 
-
-
-
-      <animated.div className="fixed top-0 h-screen left-5 w-50 bg-primary" style={reappearedProps}>
-        {/* Vertical reappeared navbar */}
-        <div className="flex flex-col items-center justify-between h-full">
-          <div className="flex flex-col items-center justify-start gap-4 mt-10">
-            <Link
-              to="/"
-              className="flex flex-col items-center gap-2"
-              onClick={() => {
-                setActive("");
-                window.scrollTo(0, 0);
-              }}
-            >
-              <img src={logo} alt="logo" className="object-contain m-5 w-9 h-9" style={{ transform: 'scale(4)' }}/>
-            </Link>
-          </div>
-
-          <div className="flex flex-col items-center justify-center gap-4">
-            {navLinks.map((nav) => (
-              <li
-                key={nav.id}
-                className={`${
-                  active === nav.title ? "text-white" : "text-secondary"
-                } hover:text-white text-[24px] font-medium cursor-pointer pl-0 list-none mt-10 mb-10`}
-                onClick={() => setActive(nav.title)}
+      {showVerticalNav && (
+        <animated.div
+          className="fixed top-0 h-screen left-5 w-50 bg-primary"
+          style={{ ...reappearedProps, ...verticalNavDisappearProps }}
+        >
+          {/* Vertical reappeared navbar */}
+          <div className="flex flex-col items-center justify-between h-full">
+            <div className="flex flex-col items-center justify-start gap-4 mt-10">
+              <Link
+                to="/"
+                className="flex flex-col items-center gap-2"
+                onClick={() => {
+                  setActive("");
+                  window.scrollTo(0, 0);
+                }}
               >
-                <a 
-                  href={`#${nav.id}`} 
-                  style={{ writingMode: 'vertical-lr', textOrientation: 'upright' }}
-                  className="letter-bounce"
+                <img
+                  src={logo}
+                  alt="logo"
+                  className="object-contain w-10 h-10 m-3"
+                  style={{ transform: "scale(2.5)" }}
+                />
+              </Link>
+            </div>
+
+            <div className="flex flex-col items-center justify-center gap-4">
+              {navLinks.map((nav) => (
+                <li
+                  key={nav.id}
+                  className={`${
+                    active === nav.title ? "text-white" : "text-secondary"
+                  } hover:text-white text-[24px] font-medium cursor-pointer pl-0 list-none pt-10 pb-10`}
+                  onClick={() => setActive(nav.title)}
                 >
-                  {nav.title}
-                </a>
-              </li>
-            ))}
+                  <a
+                    href={`#${nav.id}`}
+                    style={{ writingMode: "vertical-lr", textOrientation: "upright", marginLeft: getMarginLeft() }}
+                    className="mr-8 letter-bounce"
+                  >
+                    {nav.title}
+                  </a>
+                </li>
+              ))}
+            </div>
           </div>
-        </div>
-      </animated.div>
-
-
-
-
+        </animated.div>
+      )}
     </nav>
   );
 };
