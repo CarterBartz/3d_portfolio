@@ -10,7 +10,6 @@ import {
   reactjs,
   tailwind,
   java,
-  nodejs,
   git,
   figma,
   flutter,
@@ -20,9 +19,9 @@ import {
   menards,
   bbby,
   target,
-  carrent,
-  jobit,
-  tripguide,
+  RSV,
+  kalimba,
+  coffeeandcode,
   threejs,
 } from "../assets";
 
@@ -137,7 +136,7 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "Jun 2022 - Jun 2022",
     points: [
-      "Acquire a thorough understanding of and comply with Entuity’ s software development life cycle and its associated processes.",
+      "Acquire a thorough understanding of and comply with Entuity’s software development life cycle and its associated processes.",
       "Work with QA Manager and Development Manager to translate functional specifications into a thorough set of test cases, and document as appropriate using the QTest system.",
       "Continue to work closely with the Product Manager and software engineers throughout the software development life cycle to capture additional test scenarios and acceptance criteria covering both functional and non-functional requirements.",
       "Detailed bug reporting and providing help on reproducing issues, along with constructive feedback to software engineers.",
@@ -216,67 +215,67 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Ready, Set, Vote!",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "This application aims to inform and involve voters. To be as unbiased as possible, we consolidate the facts and make voting that much easier! Making a one stop shop for all your voting needs!",
     tags: [
       {
-        name: "react",
+        name: "flutter",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
+        name: "dart",
         color: "pink-text-gradient",
       },
+      {
+        name: "android",
+        color: "green-text-gradient",
+      },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: RSV,
+    source_code_link: "https://github.com/CarterBartz/ready_set_vote",
   },
   {
-    name: "Job IT",
+    name: "Kalimba",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "This application is designed to assist users in effectivly managing and alleviating stress by offering a diverse range of therapeutic techniques such as journaling, mood tracking, and guided meditation!",
     tags: [
       {
-        name: "react",
+        name: "java",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
+        name: "firebase",
         color: "pink-text-gradient",
       },
+      {
+        name: "android",
+        color: "green-text-gradient",
+      },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: kalimba,
+    source_code_link: "https://github.com/CarterBartz/Kalimba",
   },
   {
-    name: "Trip Guide",
+    name: "Coffee and Code",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "This application was my groups final project. We were given one week to create an app design to help developer record they're coffee consumption, as well as find coffee shops near them!",
     tags: [
       {
-        name: "nextjs",
+        name: "java",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css", 
+        name: "firebase", 
         color: "pink-text-gradient",
       },
+      {
+        name: "android",
+        color: "green-text-gradient",
+      },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: coffeeandcode,
+    source_code_link: "https://github.com/CarterBartz/Coffee_and_Code/tree/main",
   },
 ];
 

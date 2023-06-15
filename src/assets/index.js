@@ -29,9 +29,9 @@ import ppt from "./company/ppt.png";
 
 
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import RSV from "./RSV.png";
+import kalimba from "./kalimba.png";
+import coffeeandcode from "./coffeeandcode.gif";
 
 export {
   logo,
@@ -60,7 +60,7 @@ export {
   bbby,
   menards,
   ppt,
-  carrent,
-  jobit,
-  tripguide,
+  RSV,
+  kalimba,
+  coffeeandcode,
 };
