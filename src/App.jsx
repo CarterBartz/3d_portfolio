@@ -17,8 +17,10 @@ const App = () => {
         <Works />
         <Feedbacks />
         <div className="relative z-0">
-          <Contact />
-          <StarsCanvas />
+          <div className="contact-gradient-pattern">
+            <Contact />
+            <StarsCanvas />
+          </div>
         </div>
       </div>
     </BrowserRouter>
