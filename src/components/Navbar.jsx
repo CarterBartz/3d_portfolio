@@ -177,13 +177,13 @@ const Navbar = () => {
               </Link>
             </div>
 
-            <div className="flex flex-col items-center justify-center gap-4">
+            <div className="flex flex-col items-center justify-center gap-5 text-center">
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
                   className={`${
                     active === nav.title ? "text-white" : "text-secondary"
-                  } hover:text-white text-[24px] font-medium cursor-pointer pl-0 list-none pt-10 pb-10`}
+                  } hover:text-white text-[24px] font-medium cursor-pointer pl-10 list-none pt-0 pb-20`}
                   onClick={() => setActive(nav.title)}
                 >
                   <a
@@ -198,7 +198,8 @@ const Navbar = () => {
             </div>
           </div>
         </animated.div>
-      )}
+)}
+
     </nav>
   );
 };
