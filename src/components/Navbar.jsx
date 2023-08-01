@@ -37,7 +37,9 @@ const Navbar = () => {
     };
 
     const handleResize = () => {
-      setShowVerticalNav(window.innerWidth > window.innerHeight);
+      setShowVerticalNav(
+        window.innerWidth > window.innerHeight * 1.45 // Adjust the percentage here (e.g., 0.7 for 70%)
+      );
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -171,24 +173,28 @@ const Navbar = () => {
                 <img
                   src={logo}
                   alt="logo"
-                  className="object-contain w-10 h-10 m-3"
+                  className="object-contain w-10 h-10 m-2"
                   style={{ transform: "scale(2.5)" }}
                 />
               </Link>
             </div>
 
-            <div className="flex flex-col items-center justify-center gap-5 text-center">
+            <div className="flex flex-col items-center flex-grow h-full gap-5 text-center">
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
                   className={`${
                     active === nav.title ? "text-white" : "text-secondary"
-                  } hover:text-white text-[24px] font-medium cursor-pointer pl-10 list-none pt-0 pb-20`}
+                  } hover:text-white text-[24px] font-medium cursor-pointer m-3 list-none pt-0 pb-20`}
                   onClick={() => setActive(nav.title)}
                 >
                   <a
                     href={`#${nav.id}`}
-                    style={{ writingMode: "vertical-lr", textOrientation: "upright", marginLeft: getMarginLeft() }}
+                    style={{
+                      writingMode: "vertical-lr",
+                      textOrientation: "upright",
+                      marginLeft: getMarginLeft(),
+                    }}
                     className="mr-8 letter-bounce"
                   >
                     {nav.title}
@@ -196,10 +202,41 @@ const Navbar = () => {
                 </li>
               ))}
             </div>
+
+            <div className="flex items-center justify-end flex-1 sm:hidden">
+              <img
+                src={toggle ? close : menu}
+                alt="menu"
+                className="w-[28px] h-[28px] object-contain"
+                onClick={() => setToggle(!toggle)}
+              />
+
+              <div
+                className={`${
+                  !toggle ? "hidden" : "flex"
+                } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[200] z-10 rounded-xl`}
+              >
+                <ul className="flex flex-col items-start justify-end flex-1 gap-4 pl-0 list-none">
+                  {navLinks.map((nav) => (
+                    <li
+                      key={nav.id}
+                      className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                        active === nav.title ? "text-white" : "text-secondary"
+                      }`}
+                      onClick={() => {
+                        setToggle(!toggle);
+                        setActive(nav.title);
+                      }}
+                    >
+                      <a href={`#${nav.id}`}>{nav.title}</a>
+                    </li>
+                  ))}
+                </ul>
+            </div>
+          </div>
           </div>
         </animated.div>
-)}
-
+      )}
     </nav>
   );
 };
