@@ -7,16 +7,16 @@ import { SectionWrapper } from '../hoc';
 import { projects } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 
-const ProjectCard = ({ index, name, description, tags, image, source_code_link}) => {
-  return(
-    <motion.div varients={fadeIn("up", "spring", index * 0.5, 0.75)}>
+const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
+  return (
+    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
         options={{
           max: 45,
-          scale: 1,
+          scale: 0.9,
           speed: 450
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        className="w-full p-5 bg-tertiary rounded-2xl"
       >
         
         <div className="relative w-full h-[230px]">
@@ -72,25 +72,21 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-3 text-secondary text-[17px] max-w-3xcl leading-[30px]"
         >
-          Following projects showcases my skills and experiences through real-world
-          examples of my work. Each project is briefly describes with links to code 
-          repositories and live demos in it. It reflexts my ability to solve complex 
-          probelems, work with different technologies, and manage projects effectively.
+          Following projects showcase my skills and experiences through real-world
+          examples of my work. Each project is briefly described with links to code
+          repositories and live demos in it. It reflects my ability to solve complex
+          problems, work with different technologies, and manage projects effectively.
         </motion.p>
+      </div>
 
-      </div>
+      <div className='flex flex-wrap mt-20 gap-7'>
+      {projects.map((project, index) => (
+        <ProjectCard key={`project-${index}`} index={index} {...project} />
+      ))}
+    </div>
     
-      <div className="flex mt-20 felx-wrap gap-7">
-        {projects.map((project,index) => (
-          <ProjectCard 
-            key={`project-${index}`}
-            index={index}
-            {...project}
-          />
-        ))}
-      </div>
     </>
-  )
-}
+  );
+};
 
 export default SectionWrapper(Works, "");
