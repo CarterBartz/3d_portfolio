@@ -15,7 +15,7 @@ const App = () => {
         <Experience />
         <Tech />
         <Works />
-        <Feedbacks />
+        {/* <Feedbacks /> */}
         <div className="relative z-0">
           <div className="contact-gradient-pattern">
             <Contact />
