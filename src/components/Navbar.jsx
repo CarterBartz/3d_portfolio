@@ -173,7 +173,7 @@ const Navbar = () => {
                 <img
                   src={logo}
                   alt="logo"
-                  className="object-contain w-10 h-10 m-2"
+                  className="object-contain w-10 h-10 m-1"
                   style={{ transform: "scale(2.5)" }}
                 />
               </Link>
@@ -185,7 +185,7 @@ const Navbar = () => {
                   key={nav.id}
                   className={`${
                     active === nav.title ? "text-white" : "text-secondary"
-                  } hover:text-white text-[24px] font-medium cursor-pointer m-3 list-none pt-0 pb-20`}
+                  } hover:text-white text-[23px] font-medium cursor-pointer m-3 list-none pt-0`}
                   onClick={() => setActive(nav.title)}
                 >
                   <a

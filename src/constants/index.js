@@ -3,6 +3,7 @@ import {
   backend,
   creator,
   web,
+  swift,
   javascript,
   html,
   css,
@@ -56,6 +57,30 @@ const services = [
   {
     title: "App Designer",
     icon: creator,
+  },
+];
+
+const certs = [
+  {
+    title: "Learn Swift",
+    source: "~Codecademy~",
+    date: "Jan. 2024",
+    description: "This course is an introduction to Variables, Conditionals & Logic, Loops, Arrays & Sets, Fucntions, Structures, and Classes",
+    icon: swift,
+  },
+  {
+    title: "Python3",
+    source: "~Codecademy~",
+    date: "In Progress",
+    description: "This course is an introduction to Control Flow, Lists, Loops, Functions, Strings, Modules, Files, and Classes",
+    icon: python3,
+  },
+  {
+    title: "Java",
+    source: "~Codecademy~",
+    date: "In Progress",
+    description: "This course is an introduction to Object-Oriented Java, Conditionals & Control Logic, Arrays and ArrayLists, Loops, String Methods, Access, Encapsulations, Static Methods, Inheritance & Polymorphism, Debugging, and Two-Dimentional Arrays",
+    icon: java,
   },
 ];
 
@@ -279,4 +304,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, certs, technologies, experiences, testimonials, projects };
